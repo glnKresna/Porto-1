@@ -1,0 +1,316 @@
+
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 700;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+.nav-link:hover {
+    color: rgb(233, 20, 109);
+    transform: scale(1.1);
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.050);
+    z-index: -1; 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.2s ease;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+.nav-link:hover::before {
+    opacity: 1; 
+}
+
+.nav-link:hover::before {
+    width: 120%;
+    height: 120%;
+    border-radius: 5px; 
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    transform: translateX(-50%);
+    background-color: rgb(233, 20, 109);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:active {
+    transform: scale(0.95); 
+}
+
+.nav-link:active::before {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* SM Screen Media Query */
+@media (max-width: 810px) {
+    .nav-link {
+        display: block; 
+        text-align: center;
+    }
+
+    .nav-link::before {
+        width: 100vw; /* The transparent square takes the full width of the viewport */
+    }
+
+    .nav-link::after {
+        width: 0; /* Keep the bar width limited to the text */
+    }
+
+    .nav-link:hover::after {
+        width: 100%; /* Bar only spans the width of the text */
+    }
+}
+
+/* Main Section */
+.main {
+    background-size: cover;
+    width: 100%;
+    height: 95vh;
+    min-height: 800px;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.main h3 {
+    font-size: 4.2rem;
+    font-weight: 700;
+}
+
+.main h3 small {
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+.main h6 {
+    font-size: 1.35rem;
+    text-transform: uppercase;
+    line-height: 1;
+    border-bottom: 3px solid rgb(233, 20, 109);
+    display: inline-block;
+    padding-bottom: 0.2rem;
+    width: fit-content;
+}
+
+/* Animated */
+/* Main text styling */
+h6 {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    border-bottom: 3px solid rgb(233, 20, 109);
+}
+
+.highlight-text {
+    display: inline-block;
+    position: relative;
+    padding: 0.1rem 0.1rem;
+    background-color: #dfc1cf; /* Light blue highlight */
+    border-radius: 0.2rem;
+    overflow: hidden; /* Prevents the sliding text from spilling out */
+    width: 9.8rem; /* Fixed width for the longest text "PROGRAMMER" */
+    height: 1.5rem;
+    margin-left: 0.3rem;
+    vertical-align: bottom;
+    line-height: 1.30rem;
+}
+
+/* Switching text */
+.switch-text {
+    position: absolute;
+    left: 2%; /* Centering horizontally */
+    transform: translate(-50%, 150%); /* Start from below */
+    transition: transform 0.5s ease; /* Smooth slide transition */
+    white-space: nowrap;
+    line-height: 1.35rem;
+}
+
+.switch-text.show {
+    transform: translate(-50%, 0);
+}
+
+/* photo */
+.img-fluid {
+    width: 25rem; /* Adjust this percentage to control the size */
+    height: 25rem; /* Set a max-width to avoid it getting too large */
+    border-radius: 50%; /* Add rounded corners */
+    object-fit: cover;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    margin: auto; /* Center the photo horizontally */
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .img-fluid {
+        width: 12rem; /* Adjust this percentage to control the size */
+        height: 12rem;
+        margin: auto;
+    }
+}
+
+
+/* Social Media Linked Buttons */
+.socmed-button .insta-btn, .github-btn, .linkedin-btn {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background-color: #ffff;
+    border-radius: 10px;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none; /* Remove border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.socmed-button .insta-btn:hover, .github-btn:hover, .linkedin-btn:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.insta-btn:active, .github-btn:active, .linkedin-btn:active {
+    transform: scale(0.95); 
+}
+
+/* Icon Colors */
+.socmed-button .insta-btn i {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.socmed-button .github-btn i {
+    color: #181717;
+    margin: 0;
+}
+
+.socmed-button .linkedin-btn i {
+    color: #1DA1F2;
+    margin: 0;
+}
+
+/* About Section */
+#about h3 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.about-box {
+    background-color: rgb(233, 20, 109);
+    color: #f0f0f0;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+}
+
+.intro-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #ffff;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.button-txt {
+    color: rgb(233, 20, 109);
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .main {
+        padding-bottom: 4rem;
+    }
+
+    .about-box {
+        padding: 1.5rem;
+    }
+
+    .get-to-know {
+        font-size: 1rem;
+    }
+
+    .intro-text {
+        font-size: 0.75rem;
+    }
+}
+
+/* Skills Section */
+/* Skill Cards */
+    .skill-1, .skill-2 {
+        border-radius: 25px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .skill-1:hover, .skill-2:hover {
+        background-color: #3F3250; /* Change background on hover */
+    }
+    
+    .skill-1-txt, .skill-2-txt {
+        color: #333; 
+        transition: color 0.3s ease;
+    }
+    
+    .skill-1:hover .skill-1-txt, .skill-2:hover .skill-2-txt {
+        color: white; 
+    }
+
+    .tech-stack-txt h5, .tools-txt h5 {
+        background-color: #3F3250; 
+        color: white; 
+        border-radius: 20px; 
+        width: 23rem;
+    }
+    
+    .icon-wrapper img {
+        justify-content: center;
+        width: 2.75rem; 
+        margin: 0 10px;
+        transition: transform 100ms ease;
+    }
+
+    .icon-wrapper img:hover {
+        transform: scale(1.2);
+    }

@@ -74,24 +74,7 @@
 }
 
 /* SM Screen Media Query */
-@media (max-width: 810px) {
-    .nav-link {
-        display: block; 
-        text-align: center;
-    }
 
-    .nav-link::before {
-        width: 100vw; /* The transparent square takes the full width of the viewport */
-    }
-
-    .nav-link::after {
-        width: 0; /* Keep the bar width limited to the text */
-    }
-
-    .nav-link:hover::after {
-        width: 100%; /* Bar only spans the width of the text */
-    }
-}
 
 /* Main Section */
 .main {
@@ -175,13 +158,6 @@ h6 {
     display: block;
 }
 
-@media (max-width: 768px) {
-    .img-fluid {
-        width: 12rem; /* Adjust this percentage to control the size */
-        height: 12rem;
-        margin: auto;
-    }
-}
 
 
 /* Social Media Linked Buttons */
@@ -258,23 +234,7 @@ h6 {
 }
 
 /* Media Query for Small Screens */
-@media (max-width: 768px) {
-    .main {
-        padding-bottom: 4rem;
-    }
 
-    .about-box {
-        padding: 1.5rem;
-    }
-
-    .get-to-know {
-        font-size: 1rem;
-    }
-
-    .intro-text {
-        font-size: 0.75rem;
-    }
-}
 
 /* Skills Section */
 /* Skill Cards */
@@ -314,3 +274,67 @@ h6 {
     .icon-wrapper img:hover {
         transform: scale(1.2);
     }
+
+.card-menu{
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    padding: 0 0 8% 0;
+}
+.card-menu .card{
+    border-radius: 18px;
+    width: 22rem;
+}
+.card-menu .card img{
+    border-radius: 18px 18px 0 0;
+}
+@media (max-width: 810px) {
+    .nav-link {
+        display: block; 
+        text-align: center;
+    }
+
+    .nav-link::before {
+        width: 100vw; /* The transparent square takes the full width of the viewport */
+    }
+
+    .nav-link::after {
+        width: 0; /* Keep the bar width limited to the text */
+    }
+
+    .nav-link:hover::after {
+        width: 100%; /* Bar only spans the width of the text */
+    }
+}
+@media (max-width: 768px) {
+    .img-fluid {
+        width: 12rem; /* Adjust this percentage to control the size */
+        height: 12rem;
+        margin: auto;
+    }
+    .main {
+        padding-bottom: 4rem;
+    }
+
+    .about-box {
+        padding: 1.5rem;
+    }
+
+    .get-to-know {
+        font-size: 1rem;
+    }
+
+    .intro-text {
+        font-size: 0.75rem;
+    }
+    .card-menu {
+        display:contents;
+        align-items: center;
+     
+    }
+    .card-menu .card{
+        width: 80%;
+        margin: 12% 0 12% 0%;
+    }
+}
